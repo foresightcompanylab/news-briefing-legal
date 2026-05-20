@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이용약관 · Foresight Briefing</title>
+  <meta name="description" content="Foresight Briefing 서비스 이용약관">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --surface: #ffffff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-tertiary: #8a8a8a;
+      --accent: #b8860b;
+      --border: #e8e6e0;
+      --divider: #f0eee8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .header {
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Noto Serif KR', 'Pretendard', serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .meta span::before {
+      content: '·';
+      margin-right: 8px;
+      color: var(--border);
+    }
+
+    .meta span:first-child::before {
+      content: none;
+      margin: 0;
+    }
+
+    .intro {
+      background-color: var(--surface);
+      border-left: 3px solid var(--accent);
+      padding: 20px 22px;
+      margin-bottom: 40px;
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    h2 {
+      font-family: 'Noto Serif KR', 'Pretendard', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 44px;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    h2 .num {
+      color: var(--accent);
+      font-weight: 600;
+      margin-right: 10px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 22px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      font-size: 14.5px;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 14px;
+      color: var(--text-secondary);
+      font-size: 14.5px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      padding-left: 4px;
+    }
+
+    li::marker {
+      color: var(--text-tertiary);
+    }
+
+    ul ul, ol ol, ul ol, ol ul {
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-tertiary);
+      line-height: 1.7;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .footer a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+
+    .nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 28px 18px 60px; }
+      h1 { font-size: 26px; }
+      h2 { font-size: 17px; margin-top: 36px; }
+      body { font-size: 14.5px; }
+      p, ul, ol { font-size: 14px; }
+      .intro { padding: 16px 18px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header class="header">
+      <div class="brand">Foresight Briefing</div>
+      <h1>이용약관</h1>
+      <div class="meta">
+        <span>시행일 2026년 5월 19일</span>
+        <span>버전 1.0</span>
+      </div>
+    </header>
+
+    <div class="intro">
+      본 약관은 Foresight Lab(이하 "회사")이 제공하는 모바일 애플리케이션 <strong>Foresight Briefing</strong>(이하 "서비스")의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
+    </div>
+
+    <h2><span class="num">제1조</span>목적</h2>
+    <p>본 약관은 회사가 제공하는 Foresight Briefing 서비스의 이용조건 및 절차, 이용자와 회사의 권리·의무·책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
+
+    <h2><span class="num">제2조</span>용어의 정의</h2>
+    <p>본 약관에서 사용하는 용어의 정의는 다음과 같습니다.</p>
+    <ol>
+      <li><strong>"서비스"</strong>란 회사가 제공하는 Foresight Briefing 애플리케이션 및 이와 관련된 모든 부수 서비스를 의미합니다.</li>
+      <li><strong>"이용자"</strong>란 본 약관에 동의하고 서비스를 이용하는 자를 말합니다.</li>
+      <li><strong>"브리핑"</strong>이란 회사가 인공지능 기술을 활용해 일정 시점에 생성·제공하는 증시, 경제, 사회 분야의 요약 콘텐츠를 의미합니다.</li>
+      <li><strong>"디바이스 식별자"</strong>란 이용자의 단말기를 구분하기 위해 앱 최초 실행 시 자동으로 생성되는 고유 식별 값을 말합니다.</li>
+    </ol>
+
+    <h2><span class="num">제3조</span>약관의 효력 및 변경</h2>
+    <ol>
+      <li>본 약관은 서비스를 이용하고자 하는 모든 이용자에 대하여 그 효력을 발생합니다.</li>
+      <li>회사는 관련 법령을 위배하지 않는 범위에서 본 약관을 개정할 수 있습니다.</li>
+      <li>약관이 개정될 경우 회사는 적용일자 및 개정사유를 명시하여 현행 약관과 함께 서비스 내 공지사항 또는 본 페이지를 통해 적용일자 7일 전부터 공지합니다. 다만, 이용자에게 불리한 변경의 경우 30일 전부터 공지합니다.</li>
+      <li>이용자는 변경된 약관에 동의하지 않을 권리가 있으며, 동의하지 않을 경우 서비스 이용을 중단하고 앱을 삭제할 수 있습니다.</li>
+    </ol>
+
+    <h2><span class="num">제4조</span>서비스의 제공</h2>
+    <ol>
+      <li>회사는 이용자에게 다음과 같은 서비스를 제공합니다.
+        <ul>
+          <li>매일 정해진 시간에 자동 생성되는 통합 브리핑(증시·경제·사회)</li>
+          <li>국내 주요 시장 지표 요약</li>
+          <li>관심 항목 저장 및 다시 보기 기능</li>
+          <li>모닝 브리핑 푸시 알림</li>
+          <li>각 항목의 원본 출처 링크</li>
+          <li>기타 회사가 정하는 부수 서비스</li>
+        </ul>
+      </li>
+      <li>회사는 운영상 또는 기술상의 필요에 따라 제공하고 있는 서비스의 일부 또는 전부를 변경할 수 있습니다.</li>
+    </ol>
+
+    <h2><span class="num">제5조</span>서비스 이용 시간</h2>
+    <ol>
+      <li>서비스는 연중무휴 24시간 제공함을 원칙으로 합니다.</li>
+      <li>다만, 회사는 다음 각 호에 해당하는 경우 사전 또는 사후 공지 후 서비스를 일시 중단할 수 있습니다.
+        <ul>
+          <li>시스템 점검, 보수, 교체, 정기 점검 등의 사유로 부득이한 경우</li>
+          <li>새로운 서비스로의 교체 등 회사가 적절하다고 판단하는 사유가 있는 경우</li>
+          <li>국가 비상사태, 정전, 천재지변 등 불가항력적 사유가 발생한 경우</li>
+          <li>인공지능 모델 제공사의 일시적 장애 등 외부 서비스의 가용성 문제가 발생한 경우</li>
+        </ul>
+      </li>
+      <li>인공지능 기반 콘텐츠의 특성상 매일 정해진 시간 내에 브리핑이 생성되지 않을 수 있으며, 이로 인해 알림이 지연되거나 발송되지 않을 수 있습니다.</li>
+    </ol>
+
+    <h2><span class="num">제6조</span>이용자의 의무</h2>
+    <ol>
+      <li>이용자는 다음 행위를 하여서는 안 됩니다.
+        <ul>
+          <li>서비스의 운영을 방해하는 일체의 행위</li>
+          <li>다른 이용자의 서비스 이용을 방해하는 행위</li>
+          <li>회사의 지적재산권 또는 제3자의 지적재산권을 침해하는 행위</li>
+          <li>관계 법령에 위배되는 행위</li>
+          <li>회사의 사전 동의 없이 서비스를 영리 목적으로 이용하는 행위</li>
+          <li>리버스 엔지니어링, 디컴파일 등을 통해 앱의 소스 코드를 추출하거나 변경하는 행위</li>
+        </ul>
+      </li>
+      <li>이용자는 본 약관 및 관련 법령, 회사가 별도로 공지하는 이용 안내 등을 준수하여야 합니다.</li>
+    </ol>
+
+    <h2><span class="num">제7조</span>콘텐츠의 정확성</h2>
+    <ol>
+      <li>회사가 제공하는 브리핑은 인공지능 기술을 활용해 공개된 뉴스 기사 및 시장 데이터를 자동으로 요약·재구성한 결과물입니다.</li>
+      <li>회사는 콘텐츠의 정확성, 완전성, 최신성을 보장하기 위해 합리적인 노력을 기울이지만, 다음 사항을 보증하지 않습니다.
+        <ul>
+          <li>요약 내용이 원문 기사의 모든 맥락을 완벽히 반영함</li>
+          <li>제공된 시장 지표가 실시간 데이터와 완전히 일치함</li>
+          <li>인공지능이 생성한 시사점 또는 종합 의견의 절대적 정확성</li>
+        </ul>
+      </li>
+      <li>이용자는 서비스에서 제공되는 정보를 참고용으로만 활용해야 하며, 투자 결정, 의료 결정, 법률 자문 등 중요한 의사결정에 단독으로 활용해서는 안 됩니다.</li>
+      <li>특히 서비스의 증시·경제 관련 콘텐츠는 어떠한 경우에도 투자 권유 또는 투자 자문에 해당하지 않습니다. 투자에 따른 손익은 전적으로 이용자 본인의 책임입니다.</li>
+    </ol>
+
+    <h2><span class="num">제8조</span>저작권</h2>
+    <ol>
+      <li>회사가 제공하는 서비스의 디자인, 텍스트, 소프트웨어, 데이터베이스 등에 관한 저작권 및 지적재산권은 회사에 귀속됩니다.</li>
+      <li>브리핑에 인용된 원본 기사의 저작권은 각 언론사 및 원저작자에게 귀속됩니다. 회사는 공정 이용(Fair Use) 범위 내에서 요약·재구성을 제공하며, 원본 기사 링크를 함께 제공합니다.</li>
+      <li>이용자는 회사가 제공하는 서비스를 이용함으로써 얻은 정보를 회사의 사전 승낙 없이 복제, 송신, 출판, 배포, 방송 등 기타 방법으로 영리적 목적에 이용하거나 제3자에게 이용하게 해서는 안 됩니다.</li>
+    </ol>
+
+    <h2><span class="num">제9조</span>서비스 이용의 해지</h2>
+    <ol>
+      <li>이용자는 언제든지 앱을 삭제함으로써 서비스 이용을 중단할 수 있습니다.</li>
+      <li>앱 삭제 시 디바이스에 저장된 모든 데이터(저장 항목, 알림 설정 등)는 즉시 삭제됩니다. 단, 서버에 저장된 디바이스 식별자, FCM 토큰, 저장 항목 데이터는 일정 기간 보관될 수 있으며, 자세한 사항은 개인정보처리방침에서 확인할 수 있습니다.</li>
+    </ol>
+
+    <h2><span class="num">제10조</span>책임의 제한</h2>
+    <ol>
+      <li>회사는 천재지변, 전쟁, 통신장애, 외부 인공지능 서비스의 장애 등 불가항력으로 인해 서비스를 제공할 수 없는 경우 책임이 면제됩니다.</li>
+      <li>회사는 이용자의 귀책사유로 인한 서비스 이용의 장애에 대해서는 책임을 지지 않습니다.</li>
+      <li>회사는 이용자가 서비스를 통해 얻은 정보에 기초하여 행한 투자, 거래, 기타 의사결정으로 인해 발생한 손해에 대해 책임을 지지 않습니다.</li>
+      <li>회사는 무료로 제공하는 서비스 이용과 관련하여 관련 법령에 특별한 규정이 없는 한 책임을 지지 않습니다.</li>
+    </ol>
+
+    <h2><span class="num">제11조</span>개인정보 보호</h2>
+    <p>회사는 이용자의 개인정보 보호 및 관리에 관하여 관계 법령 및 회사가 정하는 <a href="privacy.html" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">개인정보처리방침</a>에 따릅니다.</p>
+
+    <h2><span class="num">제12조</span>분쟁 해결 및 관할법원</h2>
+    <ol>
+      <li>회사와 이용자 간에 발생한 분쟁은 상호 협의에 의해 해결함을 원칙으로 합니다.</li>
+      <li>협의가 이루어지지 않을 경우, 본 약관과 관련된 분쟁의 관할법원은 회사의 본점 소재지를 관할하는 <strong>제주지방법원</strong>으로 합니다.</li>
+    </ol>
+
+    <h2><span class="num">제13조</span>준거법</h2>
+    <p>본 약관의 해석 및 회사와 이용자 간의 분쟁에 대하여는 대한민국의 법령을 적용합니다.</p>
+
+    <h2><span class="num">부칙</span></h2>
+    <p>본 약관은 <strong>2026년 5월 19일</strong>부터 시행합니다.</p>
+
+    <footer class="footer">
+      <div class="nav">
+        <a href="index.html">홈</a>
+        <a href="terms.html">이용약관</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+      <p>운영자 · Foresight Lab</p>
+      <p>문의 · <a href="mailto:foresight.company.lab@gmail.com">foresight.company.lab@gmail.com</a></p>
+      <p>© 2026 Foresight Lab. All rights reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>

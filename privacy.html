@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인정보처리방침 · Foresight Briefing</title>
+  <meta name="description" content="Foresight Briefing 개인정보처리방침">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --surface: #ffffff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-tertiary: #8a8a8a;
+      --accent: #b8860b;
+      --border: #e8e6e0;
+      --divider: #f0eee8;
+      --table-header: #f4f2ec;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .header {
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Noto Serif KR', 'Pretendard', serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .meta span::before {
+      content: '·';
+      margin-right: 8px;
+      color: var(--border);
+    }
+
+    .meta span:first-child::before {
+      content: none;
+      margin: 0;
+    }
+
+    .intro {
+      background-color: var(--surface);
+      border-left: 3px solid var(--accent);
+      padding: 20px 22px;
+      margin-bottom: 40px;
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    h2 {
+      font-family: 'Noto Serif KR', 'Pretendard', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 44px;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    h2 .num {
+      color: var(--accent);
+      font-weight: 600;
+      margin-right: 10px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 22px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      font-size: 14.5px;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 14px;
+      color: var(--text-secondary);
+      font-size: 14.5px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      padding-left: 4px;
+    }
+
+    li::marker {
+      color: var(--text-tertiary);
+    }
+
+    ul ul, ol ol, ul ol, ol ul {
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 18px 0 24px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+
+    th {
+      background-color: var(--table-header);
+      color: var(--text-primary);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 12px 16px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--divider);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .footer {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-tertiary);
+      line-height: 1.7;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .footer a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+
+    .nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background-color: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 28px 18px 60px; }
+      h1 { font-size: 26px; }
+      h2 { font-size: 17px; margin-top: 36px; }
+      body { font-size: 14.5px; }
+      p, ul, ol { font-size: 14px; }
+      .intro { padding: 16px 18px; font-size: 14px; }
+      table { font-size: 13px; }
+      th, td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header class="header">
+      <div class="brand">Foresight Briefing</div>
+      <h1>개인정보처리방침</h1>
+      <div class="meta">
+        <span>시행일 2026년 5월 19일</span>
+        <span>버전 1.0</span>
+      </div>
+    </header>
+
+    <div class="intro">
+      Foresight Lab(이하 "회사")은 개인정보 보호법, 정보통신망 이용촉진 및 정보보호 등에 관한 법률 등 관련 법령을 준수하며, 이용자의 개인정보를 다음과 같이 처리합니다. 본 방침은 회사가 운영하는 모바일 애플리케이션 <strong>Foresight Briefing</strong>(이하 "서비스")에 적용됩니다.
+    </div>
+
+    <h2><span class="num">1</span>수집하는 개인정보 항목</h2>
+    <p>회사는 서비스 제공을 위해 다음과 같은 최소한의 정보를 자동으로 수집합니다. <strong>회원가입, 실명, 연락처, 이메일, 결제정보 등을 별도로 수집하지 않습니다.</strong></p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>수집 방법</th>
+            <th>수집 시점</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>디바이스 식별자</strong><br><span style="font-size: 12.5px; color: var(--text-tertiary);">앱 자체에서 생성한 UUID. 단말기 고유 ID(IMEI, ADID 등)와 무관.</span></td>
+            <td>앱 최초 실행 시 자동 생성</td>
+            <td>최초 실행 1회</td>
+          </tr>
+          <tr>
+            <td><strong>FCM 푸시 토큰</strong><br><span style="font-size: 12.5px; color: var(--text-tertiary);">Firebase Cloud Messaging이 발급하는 알림 발송용 토큰.</span></td>
+            <td>알림 권한 허용 시 자동 발급</td>
+            <td>권한 허용 시 / 토큰 갱신 시</td>
+          </tr>
+          <tr>
+            <td><strong>저장한 브리핑 항목</strong><br><span style="font-size: 12.5px; color: var(--text-tertiary);">이용자가 직접 저장한 항목의 텍스트와 메타데이터.</span></td>
+            <td>이용자가 저장 동작을 한 경우</td>
+            <td>저장 시마다</td>
+          </tr>
+          <tr>
+            <td><strong>알림 설정 상태</strong><br><span style="font-size: 12.5px; color: var(--text-tertiary);">알림 켜짐/꺼짐 여부.</span></td>
+            <td>이용자가 설정을 변경한 경우</td>
+            <td>설정 변경 시</td>
+          </tr>
+          <tr>
+            <td><strong>앱 사용 환경 정보</strong><br><span style="font-size: 12.5px; color: var(--text-tertiary);">플랫폼(Android), 앱 버전.</span></td>
+            <td>자동 수집</td>
+            <td>앱 실행 및 알림 발송 시</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2><span class="num">2</span>개인정보의 수집 및 이용 목적</h2>
+    <p>수집한 정보는 다음 목적으로만 이용됩니다.</p>
+    <ol>
+      <li><strong>서비스 제공</strong>: 디바이스별 저장 항목 관리, 알림 설정 관리</li>
+      <li><strong>푸시 알림 발송</strong>: 매일 정해진 시간에 모닝 브리핑 알림 발송</li>
+      <li><strong>서비스 운영 및 개선</strong>: 사용 패턴 분석을 통한 서비스 품질 개선</li>
+      <li><strong>장애 대응</strong>: 서비스 오류 및 장애의 원인 파악과 복구</li>
+    </ol>
+    <p style="margin-top: 14px;">회사는 수집한 정보를 위 목적 외의 용도로 이용하지 않으며, 마케팅·광고 목적으로 활용하지 않습니다.</p>
+
+    <h2><span class="num">3</span>개인정보의 보유 및 이용 기간</h2>
+    <ol>
+      <li>이용자가 앱을 사용하는 동안 수집된 정보는 서비스 제공 목적을 위해 보관됩니다.</li>
+      <li>이용자가 앱을 삭제하거나 알림을 비활성화하더라도, 서버에 저장된 디바이스 식별자, FCM 토큰, 저장 항목은 자동으로 즉시 삭제되지 않습니다.</li>
+      <li>회사는 다음 기준에 따라 데이터를 보관·삭제합니다.
+        <ul>
+          <li><strong>FCM 토큰</strong>: 알림 발송 시 토큰이 무효(NOT_REGISTERED)로 확인되면 순차적으로 삭제</li>
+          <li><strong>저장 항목 및 디바이스 식별자</strong>: 마지막 활동 후 1년이 경과한 경우 일괄 삭제</li>
+          <li><strong>이용자의 삭제 요청</strong>이 있는 경우 즉시 삭제</li>
+        </ul>
+      </li>
+      <li>관계 법령에 따라 보존이 필요한 경우 해당 법령에서 정한 기간 동안 보관됩니다.</li>
+    </ol>
+
+    <h2><span class="num">4</span>개인정보의 제3자 제공</h2>
+    <p>회사는 이용자의 개인정보를 외부에 제공하지 않습니다. 다만, 다음 처리위탁업체를 통해 서비스 운영에 필요한 데이터 처리가 이루어집니다.</p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>수탁업체</th>
+            <th>위탁 업무</th>
+            <th>처리 항목</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Supabase Inc.</strong><br><span style="font-size: 12.5px; color: var(--text-tertiary);">미국</span></td>
+            <td>데이터베이스 및 서버 인프라 제공</td>
+            <td>디바이스 식별자, FCM 토큰, 저장 항목, 알림 설정</td>
+          </tr>
+          <tr>
+            <td><strong>Google LLC</strong><br><span style="font-size: 12.5px; color: var(--text-tertiary);">미국 (Firebase Cloud Messaging)</span></td>
+            <td>푸시 알림 발송</td>
+            <td>FCM 토큰</td>
+          </tr>
+          <tr>
+            <td><strong>Google LLC</strong><br><span style="font-size: 12.5px; color: var(--text-tertiary);">미국 (Gemini API)</span></td>
+            <td>인공지능 기반 콘텐츠 생성</td>
+            <td>공개된 뉴스 기사 텍스트 (개인 정보 미포함)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top: 14px; font-size: 13.5px; color: var(--text-tertiary);">위 수탁업체들은 개인정보보호 관련 법령 및 서비스 약관에 따라 정보를 안전하게 처리합니다. 회사는 위탁 계약 체결 시 개인정보 보호법에 따라 안전한 처리에 관한 사항을 명확히 규정하고 있습니다.</p>
+
+    <h2><span class="num">5</span>개인정보의 국외 이전</h2>
+    <p>위 제4조에 명시된 수탁업체는 데이터 처리 인프라가 해외에 위치하며, 이에 따라 다음과 같이 개인정보가 국외로 이전됩니다.</p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>이전 국가</th>
+            <th>이전 항목</th>
+            <th>이전 일시</th>
+            <th>이전 방법</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>대한민국 / 미국</td>
+            <td>디바이스 식별자, FCM 토큰, 저장 항목</td>
+            <td>서비스 이용 시 실시간</td>
+            <td>네트워크를 통한 암호화 전송 (HTTPS)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top: 14px;">이전 받는 자: 위 제4조에 명시된 수탁업체</p>
+    <p style="margin-top: 4px;">이용자는 본 방침에 동의하지 않을 권리가 있으며, 동의하지 않을 경우 서비스 이용이 제한됩니다.</p>
+
+    <h2><span class="num">6</span>이용자의 권리와 행사 방법</h2>
+    <p>이용자는 다음 권리를 행사할 수 있습니다.</p>
+    <ol>
+      <li><strong>개인정보 열람·정정·삭제 요청</strong>: 회사 연락처(이메일)로 요청 시 처리</li>
+      <li><strong>알림 수신 거부</strong>: 앱 내 "마이 → 알림 설정"에서 즉시 끄기 가능</li>
+      <li><strong>저장 항목 삭제</strong>: 앱 내 "저장" 탭에서 개별 삭제 가능</li>
+      <li><strong>전체 데이터 삭제 요청</strong>: 회사 연락처로 디바이스 식별자와 함께 요청 시 7일 이내 처리. 디바이스 식별자는 앱을 다시 설치하면 새로 생성되므로 사실상 모든 개인 데이터가 분리됩니다.</li>
+      <li><strong>앱 삭제</strong>: 앱을 삭제하면 디바이스에 저장된 모든 로컬 데이터(저장 캐시 등)는 즉시 삭제됩니다.</li>
+    </ol>
+
+    <h2><span class="num">7</span>개인정보의 파기 절차 및 방법</h2>
+    <ol>
+      <li>회사는 보유 기간이 경과하거나 처리 목적이 달성된 개인정보를 지체 없이 파기합니다.</li>
+      <li><strong>파기 절차</strong>: 파기 대상 정보를 선정 후 회사의 개인정보 보호 담당자의 승인을 받아 파기합니다.</li>
+      <li><strong>파기 방법</strong>: 전자적 파일 형태의 정보는 기록을 재생할 수 없는 기술적 방법(완전 삭제)을 사용합니다.</li>
+    </ol>
+
+    <h2><span class="num">8</span>개인정보의 안전성 확보 조치</h2>
+    <p>회사는 개인정보의 안전성 확보를 위해 다음의 조치를 취하고 있습니다.</p>
+    <ol>
+      <li><strong>기술적 조치</strong>
+        <ul>
+          <li>모든 통신은 HTTPS(TLS) 암호화로 보호</li>
+          <li>데이터베이스 접근 권한 최소화 (RLS 정책 적용)</li>
+          <li>서비스 계정 키 등 민감 정보의 안전한 저장</li>
+        </ul>
+      </li>
+      <li><strong>관리적 조치</strong>
+        <ul>
+          <li>개인정보 처리 권한을 최소한의 인원으로 제한</li>
+          <li>주요 변경 사항 발생 시 로그 기록 및 보관</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2><span class="num">9</span>쿠키 및 자동 수집 도구</h2>
+    <p>본 서비스는 모바일 애플리케이션 형태로 제공되며, 웹 브라우저의 쿠키를 사용하지 않습니다. 다만 앱 내부에서 다음과 같은 자동 수집 기술을 사용합니다.</p>
+    <ul>
+      <li>로컬 저장소(SharedPreferences): 디바이스 식별자, 저장 캐시 등을 단말기에 저장</li>
+      <li>Firebase SDK: 알림 토큰 자동 발급 및 갱신</li>
+    </ul>
+
+    <h2><span class="num">10</span>개인정보 보호책임자 및 연락처</h2>
+    <p>회사는 이용자의 개인정보를 보호하고 개인정보와 관련된 불만을 처리하기 위해 다음과 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
+
+    <div class="table-wrapper" style="margin-top: 14px;">
+      <table>
+        <tbody>
+          <tr>
+            <td style="width: 30%;"><strong>운영자</strong></td>
+            <td>Foresight Lab</td>
+          </tr>
+          <tr>
+            <td><strong>개인정보 보호책임자</strong></td>
+            <td>운영자</td>
+          </tr>
+          <tr>
+            <td><strong>이메일</strong></td>
+            <td><a href="mailto:foresight.company.lab@gmail.com" style="color: var(--accent); text-decoration: none;">foresight.company.lab@gmail.com</a></td>
+          </tr>
+          <tr>
+            <td><strong>소재지</strong></td>
+            <td>대한민국 제주특별자치도</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top: 18px;">개인정보 침해로 인한 신고나 상담이 필요하신 경우 아래 기관에 문의하실 수 있습니다.</p>
+    <ul>
+      <li>개인정보분쟁조정위원회: 1833-6972 (privacy.kisa.or.kr)</li>
+      <li>개인정보침해신고센터: 118 (privacy.kisa.or.kr)</li>
+      <li>대검찰청: 1301 (spo.go.kr)</li>
+      <li>경찰청: 182 (ecrm.cyber.go.kr)</li>
+    </ul>
+
+    <h2><span class="num">11</span>방침의 변경</h2>
+    <ol>
+      <li>본 개인정보처리방침은 법령, 정책 또는 서비스 운영상의 사유로 변경될 수 있습니다.</li>
+      <li>변경 시 적용일자 7일 전부터 본 페이지를 통해 변경 사항을 공지합니다. 다만, 이용자의 권리에 중대한 영향을 미치는 변경의 경우 30일 전부터 공지합니다.</li>
+    </ol>
+
+    <h2><span class="num">부칙</span></h2>
+    <p>본 개인정보처리방침은 <strong>2026년 5월 19일</strong>부터 시행합니다.</p>
+
+    <footer class="footer">
+      <div class="nav">
+        <a href="index.html">홈</a>
+        <a href="terms.html">이용약관</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+      <p>운영자 · Foresight Lab</p>
+      <p>문의 · <a href="mailto:foresight.company.lab@gmail.com">foresight.company.lab@gmail.com</a></p>
+      <p>© 2026 Foresight Lab. All rights reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
