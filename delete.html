@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>데이터 삭제 요청 · 5분브리핑</title>
+  <meta name="description" content="5분브리핑 사용자 데이터 삭제 요청 안내">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --surface: #ffffff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-tertiary: #8a8a8a;
+      --accent: #b8860b;
+      --border: #e8e6e0;
+      --divider: #f0eee8;
+      --table-header: #f4f2ec;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .header {
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Noto Serif KR', 'Pretendard', serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    .intro {
+      background-color: var(--surface);
+      border-left: 3px solid var(--accent);
+      padding: 20px 22px;
+      margin-bottom: 40px;
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    h2 {
+      font-family: 'Noto Serif KR', 'Pretendard', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 44px;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    h2 .num {
+      color: var(--accent);
+      font-weight: 600;
+      margin-right: 10px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      font-size: 14.5px;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 14px;
+      color: var(--text-secondary);
+      font-size: 14.5px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      padding-left: 4px;
+    }
+
+    li::marker {
+      color: var(--text-tertiary);
+    }
+
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .step-list {
+      list-style: none;
+      margin-left: 0;
+      counter-reset: step-counter;
+    }
+
+    .step-list > li {
+      counter-increment: step-counter;
+      padding-left: 44px;
+      position: relative;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .step-list > li:last-child {
+      border-bottom: none;
+    }
+
+    .step-list > li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      background-color: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      font-family: 'Pretendard', sans-serif;
+    }
+
+    .step-list .step-title {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 15.5px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .step-list .step-desc {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .email-cta {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      margin: 32px 0;
+      text-align: center;
+    }
+
+    .email-cta-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .email-cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background-color: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14.5px;
+      transition: opacity 0.15s;
+    }
+
+    .email-cta-button:hover {
+      opacity: 0.85;
+    }
+
+    .email-cta-note {
+      margin-top: 14px;
+      font-size: 12.5px;
+      color: var(--text-tertiary);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 18px 0 24px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+
+    th {
+      background-color: var(--table-header);
+      color: var(--text-primary);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 12px 16px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--divider);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .info-box {
+      background-color: rgba(184, 134, 11, 0.06);
+      border-radius: 6px;
+      padding: 16px 18px;
+      margin: 20px 0;
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .info-box strong {
+      color: var(--text-primary);
+    }
+
+    .footer {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-tertiary);
+      line-height: 1.7;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .footer a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+
+    .nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    code {
+      background-color: var(--table-header);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Menlo', 'Monaco', monospace;
+      font-size: 12.5px;
+      color: var(--text-primary);
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 28px 18px 60px; }
+      h1 { font-size: 26px; }
+      h2 { font-size: 17px; margin-top: 36px; }
+      body { font-size: 14.5px; }
+      p, ul, ol { font-size: 14px; }
+      .intro { padding: 16px 18px; font-size: 14px; }
+      .step-list > li { padding-left: 38px; }
+      .step-list > li::before { width: 26px; height: 26px; font-size: 13px; }
+      .email-cta { padding: 22px; }
+      table { font-size: 12.5px; }
+      th, td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header class="header">
+      <div class="brand">5분브리핑</div>
+      <h1>데이터 삭제 요청</h1>
+      <div class="meta">최종 업데이트 2026년 5월 19일</div>
+    </header>
+
+    <div class="intro">
+      5분브리핑은 이용자의 데이터 삭제 요청을 존중하며, 요청 시 신속하게 처리해 드립니다. 본 페이지는 데이터 삭제 절차와 삭제 대상에 대해 안내합니다.
+    </div>
+
+    <h2><span class="num">1</span>삭제 대상 데이터</h2>
+    <p>요청 시 다음 데이터가 삭제됩니다.</p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>디바이스 식별자</strong></td>
+            <td>앱 최초 실행 시 자동 생성된 UUID</td>
+          </tr>
+          <tr>
+            <td><strong>FCM 푸시 토큰</strong></td>
+            <td>알림 발송용 식별자</td>
+          </tr>
+          <tr>
+            <td><strong>저장한 브리핑 항목</strong></td>
+            <td>이용자가 저장 탭에 모아둔 모든 항목</td>
+          </tr>
+          <tr>
+            <td><strong>알림 설정 상태</strong></td>
+            <td>알림 켜짐/꺼짐 등 설정 값</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-box">
+      <strong>참고</strong> · 5분브리핑은 회원가입을 받지 않으므로, 이름·이메일·전화번호 등의 개인정보는 처음부터 수집하지 않습니다. 자세한 사항은 <a href="privacy.html">개인정보처리방침</a>에서 확인할 수 있습니다.
+    </div>
+
+    <h2><span class="num">2</span>삭제 방법</h2>
+
+    <ol class="step-list">
+      <li>
+        <span class="step-title">디바이스 식별자 확인</span>
+        <span class="step-desc">
+          앱을 열어 <strong>"마이"</strong> 탭으로 이동하면 하단에 디바이스 식별자가 표시됩니다.<br>
+          (디바이스 식별자가 표시되지 않는 경우, 식별자 없이도 이메일에 명시된 단말기 정보로 처리 가능합니다.)
+        </span>
+      </li>
+      <li>
+        <span class="step-title">삭제 요청 이메일 발송</span>
+        <span class="step-desc">
+          아래 버튼을 눌러 이메일을 보내거나, 직접 <code>foresight.company.lab@gmail.com</code>으로 보내주세요.<br>
+          이메일에는 <strong>디바이스 식별자</strong>(또는 본인 확인 가능한 정보)와 <strong>삭제 요청 의사</strong>를 명시해 주시면 됩니다.
+        </span>
+      </li>
+      <li>
+        <span class="step-title">처리 및 회신</span>
+        <span class="step-desc">
+          요청 접수 후 <strong>7일 이내</strong>에 삭제를 완료하고 처리 결과를 회신해 드립니다.<br>
+          삭제 후에는 동일 디바이스에서 앱을 재실행하면 새로운 식별자가 자동 생성됩니다.
+        </span>
+      </li>
+    </ol>
+
+    <div class="email-cta">
+      <div class="email-cta-label">삭제 요청 이메일</div>
+      <a href="mailto:foresight.company.lab@gmail.com?subject=%5B5%EB%B6%84%EB%B8%8C%EB%A6%AC%ED%95%91%5D%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%82%AD%EC%A0%9C%20%EC%9A%94%EC%B2%AD&body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%2C%0A%0A%EB%8B%A4%EC%9D%8C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%20%EC%82%AD%EC%A0%9C%EB%A5%BC%20%EC%9A%94%EC%B2%AD%ED%95%A9%EB%8B%88%EB%8B%A4.%0A%0A%E2%96%A1%20%EB%94%94%EB%B0%94%EC%9D%B4%EC%8A%A4%20%EC%8B%9D%EB%B3%84%EC%9E%90%3A%20%0A%E2%96%A1%20%EC%9A%94%EC%B2%AD%20%EC%82%AC%EC%9C%A0(%EC%84%A0%ED%83%9D)%3A%20%0A%0A%EA%B0%90%EC%82%AC%ED%95%A9%EB%8B%88%EB%8B%A4." class="email-cta-button">
+        이메일로 삭제 요청하기 →
+      </a>
+      <div class="email-cta-note">
+        foresight.company.lab@gmail.com
+      </div>
+    </div>
+
+    <h2><span class="num">3</span>앱 삭제로 인한 자동 처리</h2>
+    <p>이용자가 단말기에서 앱을 삭제하면 다음과 같이 처리됩니다.</p>
+    <ul>
+      <li><strong>단말기 내 데이터</strong>: 앱 삭제와 동시에 모든 로컬 데이터(저장 캐시, 디바이스 식별자 등)가 즉시 삭제됩니다.</li>
+      <li><strong>FCM 토큰</strong>: 알림 발송 시 토큰이 무효로 확인되면 순차적으로 서버에서 삭제됩니다.</li>
+      <li><strong>저장 항목 및 식별자</strong>: 서버에 남은 데이터는 마지막 활동 후 1년이 경과하면 일괄 삭제됩니다. 즉시 삭제를 원하시면 위 이메일로 요청해 주세요.</li>
+    </ul>
+
+    <h2><span class="num">4</span>자주 묻는 질문</h2>
+
+    <p><strong>Q. 앱을 삭제하면 끝나나요?</strong></p>
+    <p>단말기 데이터는 즉시 사라지지만, 서버의 저장 항목과 식별자는 일정 기간 남을 수 있습니다. 즉시 모두 삭제하시려면 이메일로 요청해 주세요.</p>
+
+    <p><strong>Q. 일부 데이터만 삭제할 수 있나요?</strong></p>
+    <p>네, 가능합니다. 예를 들어 저장한 항목은 앱 내 "저장" 탭에서 개별 삭제할 수 있고, 알림만 끄려면 "마이 → 알림 설정"에서 즉시 비활성화할 수 있습니다.</p>
+
+    <p><strong>Q. 디바이스 식별자를 모르겠어요.</strong></p>
+    <p>이메일에 단말기 정보(예: "갤럭시 S24, 안드로이드 14")와 대략적인 마지막 사용 시기를 알려주시면 본인 확인 후 처리해 드립니다.</p>
+
+    <p><strong>Q. 삭제 처리는 얼마나 걸리나요?</strong></p>
+    <p>요청 접수 후 7일 이내에 처리하고 회신해 드립니다. 대부분 24~48시간 이내에 처리됩니다.</p>
+
+    <footer class="footer">
+      <div class="nav">
+        <a href="index.html">홈</a>
+        <a href="terms.html">이용약관</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="delete.html">데이터 삭제</a>
+      </div>
+      <p>운영자 · 포사이트(Foresight)</p>
+      <p>문의 · <a href="mailto:foresight.company.lab@gmail.com">foresight.company.lab@gmail.com</a></p>
+      <p style="margin-top: 6px;">© 2026 Foresight. All rights reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
